@@ -18,7 +18,7 @@ const KN = {
 
   // ---- Home ------------------------------------------------
   home: {
-    heroImage: '/assets/images/kyle-hero.jpg',
+    heroImage: 'assets/images/kyle-hero.jpg',
     heroAlt: 'Kyle Numann',
     bio: `Ambient/experimental music as <a href="https://infinitelimb.bandcamp.com">Infinite Limb</a>. Monthly series <a href="https://ambientsundays.bandcamp.com">Ambient Sundays</a>. Guitar in <a href="https://cloudmouthmusic.com">Cloudmouth</a> (2012–2024). Illustration, print, visual work.`,
     links: [
@@ -82,7 +82,7 @@ const KN = {
         title: 'Drunk On What I Am',
         year: 2014,
         type: 'Album',
-        cover: '/assets/images/drunk-on-what-i-am-cover.jpg',
+        cover: 'assets/images/drunk-on-what-i-am-cover.jpg',
         bandcamp: 'https://kylenumann.bandcamp.com/album/drunk-on-what-i-am',
         embed: '<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3563555234/size=large/bgcol=ffffff/linkcol=e99708/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://kylenumann.bandcamp.com/album/drunk-on-what-i-am">Drunk On What I Am by Kyle Numann</a></iframe>',
       },
@@ -213,7 +213,7 @@ const KN = {
         year: 2016,
         type: ['Illustration'],
         collection: 'venue-illustrations',
-        images: ['/assets/images/art/Crack-Mammoth-The-Basement-7-2016-v2.jpg'],
+        images: ['assets/images/art/Crack-Mammoth-The-Basement-7-2016-v2.jpg'],
         description: 'The Basement, Nashville TN. Made for a Crack Mammoth show, 2016.',
       },
       {
@@ -222,7 +222,7 @@ const KN = {
         year: 2016,
         type: ['Illustration'],
         collection: 'venue-illustrations',
-        images: ['/assets/images/art/5-Spot-v3-art.jpg'],
+        images: ['assets/images/art/5-Spot-v3-art.jpg'],
         description: 'The 5 Spot, East Nashville TN. Made for a Crack Mammoth show.',
       },
       {
@@ -231,7 +231,7 @@ const KN = {
         year: 2016,
         type: ['Illustration'],
         collection: 'venue-illustrations',
-        images: ['/assets/images/art/Officially-Altered-at-The-End-No-Text.jpg'],
+        images: ['assets/images/art/Officially-Altered-at-The-End-No-Text.jpg'],
         description: 'The End, Nashville TN. A long-standing venue on Elliston Place, being engulfed in Nashville\'s new skyline.',
       },
       {
@@ -240,7 +240,7 @@ const KN = {
         year: 2016,
         type: ['Illustration'],
         collection: 'venue-illustrations',
-        images: ['/assets/images/art/Springwater-Night-Woods-Poster.jpg'],
+        images: ['assets/images/art/Springwater-Night-Woods-Poster.jpg'],
         description: 'Re-imagining of Nashville\'s most iconic dive bar into a secluded cabin under a star-splattered sky.',
       },
       {
@@ -249,7 +249,7 @@ const KN = {
         year: 2017,
         type: ['Illustration'],
         collection: 'venue-illustrations',
-        images: ['/assets/images/art/Cloudmouth-2017-4-12-Charlie-Bobs-no-text.jpg'],
+        images: ['assets/images/art/Cloudmouth-2017-4-12-Charlie-Bobs-no-text.jpg'],
         description: 'Cloudmouth show poster, April 2017.',
       },
       {
@@ -258,7 +258,7 @@ const KN = {
         year: 2016,
         type: ['Illustration'],
         collection: 'venue-illustrations',
-        images: ['/assets/images/art/Crack-Mammoth-Tower-Defense-v02.jpg'],
+        images: ['assets/images/art/Crack-Mammoth-Tower-Defense-v02.jpg'],
         description: '',
       },
       // ---- Music Designs collection ----
@@ -269,8 +269,8 @@ const KN = {
         type: ['Illustration', 'Print'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/Drunk-On-What-Cover.jpg',
-          '/assets/images/art/Drunk-On-What-On-Page-Sleeve-v3.jpg',
+          'assets/images/art/Drunk-On-What-Cover.jpg',
+          'assets/images/art/Drunk-On-What-On-Page-Sleeve-v3.jpg',
         ],
         description: 'Album art for Cloudmouth\'s first release, Drunk On What I Am. Each physical copy came with a fold-out 8×11 poster.',
       },
@@ -281,8 +281,8 @@ const KN = {
         type: ['Illustration', 'Print'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/2014-12-18-Springwater-Print.jpg',
-          '/assets/images/art/Springwater-Night-Woods-Poster-e1420739284621.jpg',
+          'assets/images/art/2014-12-18-Springwater-Print.jpg',
+          'assets/images/art/Springwater-Night-Woods-Poster-e1420739284621.jpg',
         ],
         description: 'Poster illustration for a show of local songwriters at Nashville\'s most infamous dive bar, Springwater.',
       },
@@ -292,7 +292,7 @@ const KN = {
         year: 2017,
         type: ['Illustration', 'Print'],
         collection: 'music-designs',
-        images: ['/assets/images/art/The-Post-Listening-Party-i04.jpg'],
+        images: ['assets/images/art/The-Post-Listening-Party-i04.jpg'],
         description: 'Poster illustration for a show at the local coffee shop/juice bar/music venue The Post.',
       },
       {
@@ -302,9 +302,9 @@ const KN = {
         type: ['Illustration'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/Drunk-on-Poster.jpg',
-          '/assets/images/art/drunk-on-what-sketches.jpg',
-          '/assets/images/art/drunk-on-what-sketches-02.jpg',
+          'assets/images/art/Drunk-on-Poster.jpg',
+          'assets/images/art/drunk-on-what-sketches.jpg',
+          'assets/images/art/drunk-on-what-sketches-02.jpg',
         ],
         description: 'Exploring cover concepts for the album — a self-portrait meets symbolic setting. The lake-sitting-skeleton-reflection.',
       },
@@ -314,7 +314,7 @@ const KN = {
         year: 2014,
         type: ['Illustration', 'Print'],
         collection: 'music-designs',
-        images: ['/assets/images/art/Squirrels-Cover.jpg'],
+        images: ['assets/images/art/Squirrels-Cover.jpg'],
         description: 'Cover illustration for Lazy Susan and the Dumbwaiters\' first album.',
       },
       {
@@ -324,8 +324,8 @@ const KN = {
         type: ['Illustration', 'Print', 'Apparel'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/captains-lurch-colored.jpg',
-          '/assets/images/art/drunken-captain.jpg',
+          'assets/images/art/captains-lurch-colored.jpg',
+          'assets/images/art/drunken-captain.jpg',
         ],
         description: 'Shirt design for punk rockers Muddy Rails.',
       },
@@ -335,8 +335,8 @@ const KN = {
         year: 2014,
         type: ['Illustration', 'Logos'],
         images: [
-          '/assets/images/art/VGB-Poster-11x17.jpg',
-          '/assets/images/art/VGB-sketches-full2.jpg',
+          'assets/images/art/VGB-Poster-11x17.jpg',
+          'assets/images/art/VGB-sketches-full2.jpg',
         ],
         description: 'Badge-style logo and illustrated poster for a local sustainable food initiative, styled after WWII-era Victory Garden posters.',
       },
@@ -347,9 +347,9 @@ const KN = {
         type: ['Illustration', 'Print', 'Logos'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/olmec_pyramidhead_color_sm.jpg',
-          '/assets/images/art/olmec_head_logo_textured.jpg',
-          '/assets/images/art/headsketch2.jpg',
+          'assets/images/art/olmec_pyramidhead_color_sm.jpg',
+          'assets/images/art/olmec_head_logo_textured.jpg',
+          'assets/images/art/headsketch2.jpg',
         ],
         description: 'Nashville-based collaborative hip-hop group. Identity and artwork using iconic imagery from South American anthropology.',
       },
@@ -360,8 +360,8 @@ const KN = {
         type: ['Illustration', 'Print', 'Apparel'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/shirt_octocar.jpg',
-          '/assets/images/art/octo_car_final-011.jpg',
+          'assets/images/art/shirt_octocar.jpg',
+          'assets/images/art/octo_car_final-011.jpg',
         ],
         description: 'Nashville rock trio The Grayces needed a new shirt — a deep adventure scene almost as exciting as their live show.',
       },
@@ -372,9 +372,9 @@ const KN = {
         type: ['Illustration', 'Print', 'Logos'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/cover_web1.jpg',
-          '/assets/images/art/inside_web1.jpg',
-          '/assets/images/art/backcover_web.jpg',
+          'assets/images/art/cover_web1.jpg',
+          'assets/images/art/inside_web1.jpg',
+          'assets/images/art/backcover_web.jpg',
         ],
         description: 'Album art for Iowa punk-rock group Muddy Rails. Hand-illustrated on a 2×6 board, photographed, colored and textured digitally.',
       },
@@ -384,7 +384,7 @@ const KN = {
         year: 2012,
         type: ['Print', 'Apparel'],
         collection: 'music-designs',
-        images: ['/assets/images/art/aquariums-sitters-ink.jpg'],
+        images: ['assets/images/art/aquariums-sitters-ink.jpg'],
         description: 'Shirt design for Nashville songwriter and d.i.y. folk band Aquariums.',
       },
       {
@@ -393,7 +393,7 @@ const KN = {
         year: 2012,
         type: ['Illustration', 'Print', 'Apparel'],
         collection: 'music-designs',
-        images: ['/assets/images/art/Fancytramp-Centaur.jpg'],
+        images: ['assets/images/art/Fancytramp-Centaur.jpg'],
         description: 'Nashville glam-punk-dream rock band Fancytramp needed a guitar-slinging ferocious centaur mascot.',
       },
       {
@@ -402,8 +402,8 @@ const KN = {
         year: 2012,
         type: ['Illustration', 'Print'],
         images: [
-          '/assets/images/art/greenwag_bongolabel_5pt1.jpg',
-          '/assets/images/art/greenwag_bongolabels1.jpg',
+          'assets/images/art/greenwag_bongolabel_5pt1.jpg',
+          'assets/images/art/greenwag_bongolabels1.jpg',
         ],
         description: 'Custom coffee labels for Bongo Java\'s roasted beans, sold at East Nashville\'s local general store The Green Wagon.',
       },
@@ -413,8 +413,8 @@ const KN = {
         year: 2012,
         type: ['Print', 'Infographic', 'Logos'],
         images: [
-          '/assets/images/art/5points_banner_web.jpg',
-          '/assets/images/art/5pf_promo.jpg',
+          'assets/images/art/5points_banner_web.jpg',
+          'assets/images/art/5pf_promo.jpg',
         ],
         description: 'Promotional poster, magazine ad, logo and East Nashville map design for the 5 Points Friday market.',
       },
@@ -425,8 +425,8 @@ const KN = {
         type: ['Print', 'Apparel'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/Fuckshow-Final.jpg',
-          '/assets/images/art/Fuckshow-Logo.jpg',
+          'assets/images/art/Fuckshow-Final.jpg',
+          'assets/images/art/Fuckshow-Logo.jpg',
         ],
         description: 'Visceral visual imagery to match visceral music. Hand drawn and digitally colored.',
       },
@@ -436,8 +436,8 @@ const KN = {
         year: 2013,
         type: ['Illustration', 'Print'],
         images: [
-          '/assets/images/art/Crawfish-Boil-Poster.jpg',
-          '/assets/images/art/logo-preview.jpg',
+          'assets/images/art/Crawfish-Boil-Poster.jpg',
+          'assets/images/art/logo-preview.jpg',
         ],
         description: 'Poster and logo for Community Food Advocates\' Spring Crawfish Boil fundraiser.',
       },
@@ -447,8 +447,8 @@ const KN = {
         year: 2012,
         type: ['Print'],
         images: [
-          '/assets/images/art/food-day-2012-web.jpg',
-          '/assets/images/art/save-the-date-web.jpg',
+          'assets/images/art/food-day-2012-web.jpg',
+          'assets/images/art/save-the-date-web.jpg',
         ],
         description: 'Last-minute promotional poster for the Buffalo Valley Farm Dinner with vivid textures and food photography.',
       },
@@ -459,8 +459,8 @@ const KN = {
         type: ['Illustration', 'Print'],
         collection: 'music-designs',
         images: [
-          '/assets/images/art/poster_nwu.jpg',
-          '/assets/images/art/poster_nwu2.jpg',
+          'assets/images/art/poster_nwu.jpg',
+          'assets/images/art/poster_nwu2.jpg',
         ],
         description: 'Hand-illustrated poster for The New Whole Usuals — their shows are a spectacle worthy of a Shakespearean stage.',
       },
@@ -469,7 +469,7 @@ const KN = {
         title: 'Heritage Dance Project',
         year: 2012,
         type: ['Print', 'Logos', 'Apparel'],
-        images: ['/assets/images/art/Heritage-Shirt-e1344466346890.jpg'],
+        images: ['assets/images/art/Heritage-Shirt-e1344466346890.jpg'],
         description: 'Shirt design for Nashville\'s Heritage Dance Project. The dancer\'s form abstracted into the shape of branches and leaves.',
       },
       {
@@ -477,7 +477,7 @@ const KN = {
         title: 'Seed Money Suppers',
         year: 2013,
         type: ['Print', 'Infographic', 'Illustration'],
-        images: ['/assets/images/art/CFA-PTP-NATIVE-ad-revised-Small.jpg'],
+        images: ['assets/images/art/CFA-PTP-NATIVE-ad-revised-Small.jpg'],
         description: 'Infographic for Community Food Advocates\' micro-grant program for a healthier Nashville food system.',
       },
     ],

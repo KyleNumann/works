@@ -2,6 +2,9 @@
 // KN WORKS — MAIN JS
 // ============================================================
 
+// ---- Base path (works at root or in /works/ subfolder) ----------
+const KN_BASE = document.querySelector('script[src*="main.js"]').src.replace(/assets\/js\/main\.js.*$/, '');
+
 // ---- Accent color: slow hue cycle tied to clock ----------------
 (function () {
   const CYCLE_MS = 600000; // 10 minutes for full 360°
@@ -153,7 +156,7 @@
       <article class="art-item" data-slug="${piece.slug}"
                role="button" tabindex="0"
                aria-label="${piece.title}">
-        <img src="${piece.images[0]}"
+        <img src="${KN_BASE}${piece.images[0]}"
              alt="${piece.title}"
              loading="lazy">
         <div class="art-item__overlay">
@@ -207,7 +210,7 @@ function openLightbox(slug) {
   if (!lightbox || typeof KN === 'undefined') return;
   const piece = KN.art.pieces.find(p => p.slug === slug);
   if (!piece) return;
-  lightboxImg.src = piece.images[0];
+  lightboxImg.src = KN_BASE + piece.images[0];
   lightboxImg.alt = piece.title;
   lightboxImg.classList.remove('zoomed');
   lightboxCaption.textContent = piece.title + (piece.year ? ` — ${piece.year}` : '');
@@ -250,7 +253,7 @@ if (lightbox) {
   el.innerHTML = '<div class="release-list">' + releases.map(r => `
     <a class="release-item" href="${r.bandcamp}" target="_blank" rel="noopener">
       <div class="release-item__cover">
-        ${r.cover ? `<img src="${r.cover}" alt="${r.title}" loading="lazy">` : ''}
+        ${r.cover ? `<img src="${r.cover.startsWith('http') ? r.cover : KN_BASE + r.cover}" alt="${r.title}" loading="lazy">` : ''}
       </div>
       <div>
         <span class="release-item__title">${r.title}</span>
