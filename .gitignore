@@ -1,0 +1,3 @@
+scrape/
+.playwright-mcp/
+.DS_Store
