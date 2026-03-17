@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live — Kyle Numann</title>
+  <meta name="description" content="Live performances — Infinite Limb, Ambient Sundays, Cloudmouth.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="site-logo">Kyle Numann</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/music/">music</a>
+        <a href="/live/">live</a>
+        <a href="/video/">video</a>
+        <a href="/art/">art</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="page-header">
+        <h1>Live</h1>
+        <p class="intro">Performance log.</p>
+      </div>
+
+      <!-- Upcoming -->
+      <section class="page-section" aria-labelledby="upcoming-heading">
+        <span class="section-label" id="upcoming-heading">Upcoming</span>
+        <div id="shows-list">
+          <p class="empty">No upcoming shows scheduled.</p>
+        </div>
+      </section>
+
+      <!-- Ambient Sundays -->
+      <section class="page-section" aria-labelledby="as-heading">
+        <span class="section-label" id="as-heading">Ongoing</span>
+        <div class="as-block">
+          <div class="as-block__title">Ambient Sundays</div>
+          <p class="as-block__desc">
+            Monthly ambient series. Nashville, TN.
+            Quiet listening, improvised sound. Performs as Infinite Limb.
+          </p>
+          <div class="as-block__links">
+            <a href="https://ambientsundays.bandcamp.com" target="_blank" rel="noopener">Bandcamp ↗</a>
+            <a href="https://instagram.com/ambient_sundays" target="_blank" rel="noopener">@ambient_sundays ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Past shows -->
+      <section class="page-section" aria-labelledby="past-heading">
+        <span class="section-label" id="past-heading">Past shows</span>
+        <div id="past-shows-list">
+          <!-- Rendered by JS from KN.live.pastShows -->
+          <p class="empty">Loading…</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Kyle Numann</span>
+      <div class="footer-links">
+        <a href="https://infinitelimb.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="https://instagram.com/kylenumann" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:kyle.numann@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/content/data.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

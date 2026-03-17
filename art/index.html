@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art — Kyle Numann</title>
+  <meta name="description" content="Illustrations, prints, and visual work by Kyle Numann.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="site-logo">Kyle Numann</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/music/">music</a>
+        <a href="/live/">live</a>
+        <a href="/video/">video</a>
+        <a href="/art/">art</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="page-header">
+        <h1>Art</h1>
+        <p class="intro">Illustration, print, design. 2012–present.</p>
+      </div>
+
+      <!-- Art Grid -->
+      <section class="page-section" aria-labelledby="works-heading">
+        <span class="section-label" id="works-heading">Works</span>
+
+        <!-- Filter buttons -->
+        <div class="art-filters" id="art-filters" role="group" aria-label="Filter by type">
+          <button class="art-filter active" data-filter="all">All</button>
+          <button class="art-filter" data-filter="venue-illustrations">Venue Illustrations</button>
+          <button class="art-filter" data-filter="music-designs">Music Designs</button>
+          <button class="art-filter" data-filter="Illustration">Illustration</button>
+          <button class="art-filter" data-filter="Print">Print</button>
+          <button class="art-filter" data-filter="Logos">Logos</button>
+        </div>
+
+        <!-- Filter description — shown when a collection filter is active -->
+        <div class="art-filter-desc" id="art-filter-desc"></div>
+
+        <!-- Grid rendered by main.js from content/data.js -->
+        <div class="art-grid" id="art-grid" aria-live="polite">
+          <p class="empty">Loading works…</p>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close">×</button>
+    <img class="lightbox__image" id="lightbox-image" src="" alt="">
+    <div class="lightbox__caption" id="lightbox-caption"></div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Kyle Numann</div>
+      <div class="footer-links">
+        <a href="https://infinitelimb.bandcamp.com" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="https://instagram.com/kylenumann" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:kyle.numann@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/content/data.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
