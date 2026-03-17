@@ -19,6 +19,73 @@
   setInterval(tick, 1600); // ~1° every 1.67s, check just under that
 })();
 
+// ---- Logo typewriter cycle -------------------------------------
+(function () {
+  const el = document.querySelector('.site-logo');
+  if (!el) return;
+
+  const NAME = 'Kyle Numann';
+  const words = [NAME, 'Human', 'Musician', 'Artist'];
+  const TYPE_MS = 80;
+  const DELETE_MS = 50;
+  const FAST_MS = 25;
+  const PAUSE_MS = 3000;
+
+  let idx = 0;
+  let cycling = true;
+  let timer = null;
+
+  function clearTimers() {
+    if (timer) { clearTimeout(timer); timer = null; }
+  }
+
+  function deleteText(speed, cb) {
+    const text = el.textContent;
+    if (text.length === 0) return cb();
+    el.textContent = text.slice(0, -1);
+    timer = setTimeout(() => deleteText(speed, cb), speed);
+  }
+
+  function typeText(word, i, speed, cb) {
+    if (i > word.length) return cb();
+    el.textContent = word.slice(0, i);
+    timer = setTimeout(() => typeText(word, i + 1, speed, cb), speed);
+  }
+
+  function cycle() {
+    if (!cycling) return;
+    idx = (idx + 1) % words.length;
+    deleteText(DELETE_MS, () => {
+      timer = setTimeout(() => {
+        if (!cycling) return;
+        typeText(words[idx], 1, TYPE_MS, () => {
+          timer = setTimeout(cycle, PAUSE_MS);
+        });
+      }, 300);
+    });
+  }
+
+  function snapToName() {
+    cycling = false;
+    clearTimers();
+    deleteText(FAST_MS, () => {
+      typeText(NAME, 1, FAST_MS, () => {
+        idx = 0;
+      });
+    });
+  }
+
+  function resumeCycle() {
+    cycling = true;
+    timer = setTimeout(cycle, PAUSE_MS);
+  }
+
+  el.addEventListener('mouseenter', snapToName);
+  el.addEventListener('mouseleave', resumeCycle);
+
+  timer = setTimeout(cycle, PAUSE_MS);
+})();
+
 // ---- Nav: active state + scroll --------------------------------
 (function () {
   const header = document.querySelector('.site-header');
