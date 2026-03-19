@@ -32,9 +32,12 @@ const KN_BASE = document.querySelector('script[src*="main.js"]').src.replace(/as
   const TYPE_MS = 80;
   const DELETE_MS = 50;
   const FAST_MS = 25;
-  const PAUSE_MS = 3000;
+  const PAUSE_NAME = 5000;
+  const PAUSE_WORD = 1500;
+  const MAX_ITERATIONS = 3;
 
   let idx = 0;
+  let iterations = 0;
   let cycling = true;
   let timer = null;
 
@@ -58,11 +61,17 @@ const KN_BASE = document.querySelector('script[src*="main.js"]').src.replace(/as
   function cycle() {
     if (!cycling) return;
     idx = (idx + 1) % words.length;
+    if (idx === 0) iterations++;
+    if (iterations >= MAX_ITERATIONS) {
+      el.textContent = NAME;
+      return;
+    }
+    const pause = (idx === 0) ? PAUSE_NAME : PAUSE_WORD;
     deleteText(DELETE_MS, () => {
       timer = setTimeout(() => {
         if (!cycling) return;
         typeText(words[idx], 1, TYPE_MS, () => {
-          timer = setTimeout(cycle, PAUSE_MS);
+          timer = setTimeout(cycle, pause);
         });
       }, 300);
     });
@@ -79,14 +88,16 @@ const KN_BASE = document.querySelector('script[src*="main.js"]').src.replace(/as
   }
 
   function resumeCycle() {
+    if (iterations >= MAX_ITERATIONS) return;
     cycling = true;
-    timer = setTimeout(cycle, PAUSE_MS);
+    const pause = (idx === 0) ? PAUSE_NAME : PAUSE_WORD;
+    timer = setTimeout(cycle, pause);
   }
 
   el.addEventListener('mouseenter', snapToName);
   el.addEventListener('mouseleave', resumeCycle);
 
-  timer = setTimeout(cycle, PAUSE_MS);
+  timer = setTimeout(cycle, PAUSE_NAME);
 })();
 
 // ---- Nav: active state + scroll --------------------------------
@@ -239,6 +250,47 @@ if (lightbox) {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 }
 
+// ---- Home: latest + featured releases from data -----------------
+(function () {
+  if (typeof KN === 'undefined') return;
+  const releases = KN.music.releases;
+  if (!releases || !releases.length) return;
+
+  // Latest release (first in the list)
+  const latestEl = document.getElementById('home-latest');
+  if (latestEl) {
+    const r = releases[0];
+    latestEl.innerHTML = `
+      <div class="latest-release">
+        <h2 class="latest-release__title">${r.title}</h2>
+        <p class="latest-release__meta">${r.artist} · ${r.year} · ${r.type}</p>
+        ${r.description ? `<p class="latest-release__desc">${r.description}</p>` : ''}
+        <div class="latest-release__embed">${r.embed}</div>
+        <a class="latest-release__link" href="${r.bandcamp}" target="_blank" rel="noopener">Bandcamp ↗</a>
+      </div>`;
+  }
+
+  // Featured discography
+  const discoEl = document.getElementById('home-discography');
+  if (discoEl) {
+    const titles = (KN.home.featuredReleases || []);
+    const featured = titles.map(t => releases.find(r => r.title === t)).filter(Boolean);
+    if (!featured.length) return;
+    discoEl.innerHTML = '<div class="row-list">' + featured.map(r => `
+      <div class="row-item">
+        <span class="row-item__date">${r.year}</span>
+        <span class="row-item__main">
+          <strong>${r.title}</strong>
+          <span class="row-item__sub">${r.artist} · ${r.type}</span>
+          ${r.description ? `<span class="row-item__desc">${r.description}</span>` : ''}
+        </span>
+        <span class="row-item__tag">
+          <a href="${r.bandcamp}" target="_blank" rel="noopener">Bandcamp ↗</a>
+        </span>
+      </div>`).join('') + '</div>';
+  }
+})();
+
 // ---- Music releases: render from data ---------------------------
 (function () {
   const el = document.getElementById('releases-list');
@@ -251,16 +303,17 @@ if (lightbox) {
   }
 
   el.innerHTML = '<div class="release-list">' + releases.map(r => `
-    <a class="release-item" href="${r.bandcamp}" target="_blank" rel="noopener">
+    <div class="release-item">
       <div class="release-item__cover">
         ${r.cover ? `<img src="${r.cover.startsWith('http') ? r.cover : KN_BASE + r.cover}" alt="${r.title}" loading="lazy">` : ''}
       </div>
       <div>
         <span class="release-item__title">${r.title}</span>
         <span class="release-item__artist">${r.artist} · ${r.type} · ${r.year}</span>
+        ${r.description ? `<span class="release-item__desc">${r.description}</span>` : ''}
       </div>
-      <span class="release-item__link">Bandcamp ↗</span>
-    </a>
+      <a class="release-item__link" href="${r.bandcamp}" target="_blank" rel="noopener">Bandcamp ↗</a>
+    </div>
   `).join('') + '</div>';
 })();
 
@@ -329,7 +382,7 @@ if (lightbox) {
     const upcoming = (KN.live.shows || []).filter(s => s.date >= today).sort((a,b) => a.date.localeCompare(b.date));
     upcomingEl.innerHTML = upcoming.length
       ? `<div class="row-list">${upcoming.map(renderRow).join('')}</div>`
-      : '<p class="empty">None scheduled. See <a href="https://instagram.com/infinitelimb" target="_blank" rel="noopener" style="color:var(--fg-dim)">@infinitelimb</a>.</p>';
+      : '<p class="empty">See <a href="https://instagram.com/infinitelimb" target="_blank" rel="noopener" style="color:var(--fg-dim)">@infinitelimb</a>.</p>';
   }
 
   // Past shows (live page only)
