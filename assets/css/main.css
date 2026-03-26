@@ -402,7 +402,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 .release-item {
   display: grid;
-  grid-template-columns: 4.5rem 1fr auto;
+  grid-template-columns: 9rem 1fr auto;
   align-items: center;
   gap: 0 1.25rem;
   padding-block: 0.95rem;
@@ -412,8 +412,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .release-item:first-child { border-top: 1px solid var(--rule); }
 
 .release-item__cover {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 9rem;
+  height: 9rem;
   background: var(--surface);
   border: 1px solid var(--rule);
   overflow: hidden;
@@ -461,9 +461,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 @media (max-width: 640px) {
   .release-item {
-    grid-template-columns: 3.5rem 1fr;
+    grid-template-columns: 7rem 1fr;
   }
-  .release-item__cover { width: 3.5rem; height: 3.5rem; }
+  .release-item__cover { width: 7rem; height: 7rem; }
   .release-item__link {
     grid-column: 2;
     margin-top: 0.15rem;
